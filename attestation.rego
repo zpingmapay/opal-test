@@ -1,26 +1,20 @@
 package attestation
 
-# main
-valid_attestation = [attestation |
-    app_id := input.context.app_id
-    scenario := input.context.scenario
+# main 
+valid_attestation = [result] {
     att := input.context.attestation
-    is_valid(att)
+    
+  
+    att.status == "active"
+    att.expiry_date > time.now_ns()
+    att.user_id == input.context.user_id
+    att.scenario == input.context.scenario
+    att.customer_id == input.context.customer_id
 
-    # create obligation with original names
-    attestation := {
+    result := {
         "attestation_id": att.attestation_id,
         "is_valid": true
     }
-]
-
-# validate attestation
-is_valid(attestation) if {
-    attestation.status == "active"
-    attestation.expiry_date > time.now_ns()
-    attestation.user_id == input.context.user_id
-    attestation.scenario == input.context.scenario
-    attestation.customer_id == input.context.customer_id
 }
 
-default valid_attestation = {}
+default valid_attestation = []
