@@ -1,3 +1,3 @@
 package servers
 
-output := input.servers
+output := input.servers.ips
