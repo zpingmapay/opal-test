@@ -2,6 +2,7 @@ package attestation
 
 att := input.context.attestation
 
+
 # main
 valid_attestation = [attestation |
     app_id := input.context.app_id
