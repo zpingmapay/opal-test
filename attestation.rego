@@ -1,12 +1,10 @@
 package attestation
 
-att := input.context.attestation
-
-
 # main
 valid_attestation = [attestation |
     app_id := input.context.app_id
     scenario := input.context.scenario
+    att := input.context.attestation
     is_valid(att)
 
     # create obligation with original names
