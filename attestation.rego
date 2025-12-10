@@ -1,6 +1,6 @@
 package attestation
 
-# main
+# main - test
 valid_attestation = [result] {
     att := input.context.attestation
     
