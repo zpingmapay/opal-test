@@ -16,5 +16,3 @@ valid_attestation = [result] {
         "is_valid": true
     }
 }
-
-default valid_attestation = []
