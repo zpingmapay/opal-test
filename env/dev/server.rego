@@ -1,1 +1,3 @@
-package server
+package servers
+
+output := input.server.ip
