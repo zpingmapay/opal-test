@@ -1,3 +1,3 @@
 package dev.servers
 
-output := input.server
+output := input.servers[0].id
