@@ -1,3 +1,3 @@
 package qa.servers
 
-output := input.server
+output := input.servers[1].id
