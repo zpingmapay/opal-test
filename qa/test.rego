@@ -1,3 +1,3 @@
-package qa.server
+package qa.servers
 
 output := input.server
